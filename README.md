@@ -1,7 +1,7 @@
 # SAE203
 # Entreprise:
  1. Nom:
-  *Breizh Hardware
+  * Breizh Hardware
  2. Objectif:
   * récupération d'anciens ordinateurs et et d'anciens composants pour les reparer et revendre des nouveaux ordinateurs reconditionnés.
 
