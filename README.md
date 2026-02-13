@@ -1,10 +1,10 @@
 # SAE203
 # Entreprise:
- * Nom:
+ 1. Nom:
   *Breizh Hardware
- * Objectif:
+ 2. Objectif:
   * récupération d'anciens ordinateurs et et d'anciens composants pour les reparer et revendre des nouveaux ordinateurs reconditionnés.
 
- * logo:
- * slogan:
+ 3. logo:
+ 4. slogan:
  * 
