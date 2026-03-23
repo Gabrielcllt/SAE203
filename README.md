@@ -7,6 +7,6 @@
 
  3. logo:
 
-  ![Le logo de Framasoft](https://framasoft.org/img/biglogo.png "Un bien beau logo !")
+  ![Breizh Hardware](images/logo_sae203_final2.png")
 
  4. slogan:
