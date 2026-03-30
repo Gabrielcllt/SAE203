@@ -11,4 +11,4 @@
 
  4. slogan:
 
-Travail, famille, SAE203
+
