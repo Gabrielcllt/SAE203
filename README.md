@@ -10,6 +10,6 @@
   ![Breizh Hardware](/images/logo_sae203_final2.png)
 
  4. slogan:
-    Never backdown never what ? Never give up
+    Breizh Hardware : Pur beurre, pur processeur.
 
 
