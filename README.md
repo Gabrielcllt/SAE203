@@ -10,5 +10,6 @@
   ![Breizh Hardware](/images/logo_sae203_final2.png)
 
  4. slogan:
+    Breizh Hardware : Pur beurre, pur processeur.
 
-Travail, famille, SAE203
+
