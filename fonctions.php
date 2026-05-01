@@ -11,24 +11,17 @@
         };
         function entete(){
             echo "<header class='mt-4 p-5 rounded text-center'>";
-            echo "<img src='./images/logo.png' width='200' height='50'/> ";
-            if (isset($_SESSION['pseudo'])){
-                echo "<br> Bienvenue, ".$_SESSION['pseudo']."<br>";
-                echo "<a href='deconnexion.php'>Déconnexion</a>";
-
-            }else {
-                echo "<br><a href='connexion.php'>Connexion</a>";
-            }
+            echo "<img src='./images/logo_sae203_final.png'/> ";
+            echo "<form action='deconnecter()' method='POST'> <button type='submit'>Se déconnecter</button> </form>"
+            if (isset($_POST['action_deconnexion'])) {// si l'on appuie sur le bouton on lance la fonction pour se deconnecter
+                deconnecter();
+            };
             echo "</header>";
         };
         function piedpage(){
-            echo "<footer class='mt-4 p-5 rounded  text-center bg-dark text-white'> &copy". date('Y') ."<br>  L'adresse IP et le port utilisé sont ". 
-            $_SERVER['REMOTE_ADDR'] .":". $_SERVER['REMOTE_PORT'] . "<br> <div><a href='#'>LinkedIn</a>" ." | ". "<a href='#'>Instagram</a></div> </footer>";
-            
-        };
-        function piedpageaccueil(){
-            echo "<footer class='mt-4 p-5 rounded fixed-bottom text-center bg-dark text-white'> &copy". date('Y') ."<br>  L'adresse IP et le port utilisé sont ". 
-            $_SERVER['REMOTE_ADDR'] .":". $_SERVER['REMOTE_PORT'] . "<br> <div><a href='#'>LinkedIn</a>" ." | ". "<a href='#'>Instagram</a></div> </footer>";
+            echo "<footer class=' text-center py-5 fixed-bottom'>
+            <small class='text-muted'>© date('Y') BreizhHardware - IUT Saint-Malo R&T</small>
+            </footer>";
             
         };
         function navigation(){
@@ -36,8 +29,8 @@
 
             echo "<nav class='navbar navbar-expand-lg fixed-top bg-dark'>
             <div class='container'>
-                <a class='navbar-brand fw-bold text-white' href='accueil.php'>
-                    <span>COUCOUVOIT</span>
+                <a class='navbar-brand fw-bold text-white' href='index0.php'>
+                    <span>Breizh Hardware</span>
                 </a>
                 
                 <button class='navbar-toggler border-0' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav'>
@@ -45,15 +38,24 @@
                 </button>
                 <div class='collapse navbar-collapse' id='navbarNav'>
                     <ul class='navbar-nav ms-auto '>";
-            echo        "<li class='nav-item'". ($page =='accueil.php' ? 'active' : '')."><a class='nav-link text-white' href='accueil.php'>Accueil</a></li>";
-            echo        "<li class='nav-item'". ($page =='visualiser.php' ? 'active' : '')."><a class='nav-link text-white' href='visualiser.php'>Annonces</a></li>";
+            echo        "<li class='nav-item'". ($page =='index0.php' ? 'active' : '')."><a class='nav-link text-white' href='index0.php'>Accueil</a></li>";
+            echo        "<li class='nav-item'". ($page =='commandes.php' ? 'active' : '')."><a class='nav-link text-white' href='commandes.php'>Commandes en cours</a></li>";
+            echo        "<li class='nav-item'". ($page =='annuaires.php' ? 'active' : '')."><a class='nav-link text-white' href='annuaires.php'>Annuaires</a></li>";
+            if (isset($_SESSION['user_groups']) && in_array('admin', $_SESSION['user_groups'])) { 
             echo        "<li class='nav-item'". ($page =='administration.php' ? 'active' : '')."><a class='nav-link text-white' href='administration.php'>Administration</a></li>";
-            echo        "<li class='nav-item'". ($page =='profil.php' ? 'active' : '')."><a class='nav-link text-white' href='profil.php'>Profil</a></li>";
-            echo        "<li class='nav-item'". ($page =='wiki.php' ? 'active' : '')."><a class='nav-link text-white' href='wiki.php'>Wiki</a></li>
-                    </ul>
+            };
+            echo "</ul>
                 </div>
             </div>
         </nav>";
+        };
+        function deconnecter(){
+        // Vider toutes les variables de session
+        $_SESSION = array();
+        session_destroy();
+        // redirection
+        header("Location: index.php");
+        exit();  
         };
 ?>
 
