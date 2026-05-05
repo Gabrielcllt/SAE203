@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "login": "nbertel",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "BERTEL",
+    "prenom": "Nolan",
+    "fonction": "Responsable Atelier & Infrastructure",
+    "photo": "nolan.jpg",
+    "bio": "Expert en hardware breton, Nolan redonne vie aux PC les plus fatigués.",
+    "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 2,
+    "login": "aferrard",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "FERRARD",
+    "prenom": "Alexi",
+    "fonction": "Administrateur Système & Sécurité",
+    "photo": "alexi.jpg",
+    "bio": "Le gardien des données. Si l'intranet est un coffre-fort, Alexi a la clé.",
+    "groupes": ["admin", "salariés", "perso"]
+  },
+  {
+    "id": 3,
+    "login": "ebitauld",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "BITAULD",
+    "prenom": "Elouann",
+    "fonction": "Chef de Projet & Intégrateur",
+    "photo": "elouann.jpg",
+    "bio": "Chef d'orchestre de Breizh Hardware, il transforme le code en art visuel.",
+    "groupes": ["admin", "direction", "perso"]
+  },
+  {
+    "id": 4,
+    "login": "gcollet",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "COLLET",
+    "prenom": "Gabriel",
+    "fonction": "Développeur Back-End",
+    "photo": "gabriel.jpg",
+    "bio": "L'homme de l'ombre qui fait parler le PHP. Rien ne lui résiste.",
+    "groupes": ["managers", "salariés", "perso"]
+  },
+  {
+    "id": 5,
+    "login": "amerot",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "MEROT",
+    "prenom": "Alban",
+    "fonction": "Développeur & Gestionnaire Données",
+    "photo": "alban.jpg",
+    "bio": "Maître des fichiers JSON. Il range les données plus vite que son ombre.",
+    "groupes": ["managers", "salariés", "perso"]
+  },
+  {
+    "id": 6,
+    "login": "mcoupart",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "COUPART",
+    "prenom": "Michel",
+    "fonction": "Technicien Maintenance",
+    "photo": "michel.jpg",
+    "bio": "Spécialiste du dépoussiérage et du changement de pâte thermique.",
+    "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 7,
+    "login": "ochatigny",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "CHATIGNY",
+    "prenom": "Ogier",
+    "fonction": "Technicien Maintenance",
+    "photo": "ogier.jpg",
+    "bio": "Expert en micro-soudure sur cartes mères de PC portables.",
+    "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 8,
+    "login": "cmathieu",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "MATHIEU",
+    "prenom": "Coralie",
+    "fonction": "Vendeuse Conseil",
+    "photo": "coralie.jpg",
+    "bio": "À l'écoute des clients pour trouver le PC reconditionné idéal.",
+    "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 9,
+    "login": "alaurent",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "LAURENT",
+    "prenom": "Alexandre",
+    "fonction": "Technicien Maintenance",
+    "photo": "alexandre.jpg",
+    "bio": "Passionné par l'optimisation logicielle et le nettoyage système.",
+    "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 10,
+    "login": "mauberjenois",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "AUBERJENOIS",
+    "prenom": "Madelene",
+    "fonction": "Responsable Logistique",
+    "photo": "madelene.jpg",
+    "bio": "Gère les flux d'entrées et sorties des stocks de matériel.",
+    "groupes": ["managers", "salariés", "perso"]
+  },
+  {
+    "id": 11,
+    "login": "afaure",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "FAURE",
+    "prenom": "Apolline",
+    "fonction": "Technicien Maintenance",
+    "photo": "apolline.jpg",
+    "bio": "Spécialiste de la récupération de données sur disques durs défectueux.",
+    "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 12,
+    "login": "alemaitre",
+    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "nom": "LEMAÎTRE",
+    "prenom": "Arnaud",
+    "fonction": "Technicien Maintenance",
+    "photo": "arnaud.jpg",
+    "bio": "Le roi du reconditionnement d'écrans et de dalles LCD.",
+    "groupes": ["salariés", "perso"]
+  }
+]
