@@ -40,7 +40,7 @@
                     <ul class='navbar-nav ms-auto '>";
             echo        "<li class='nav-item'". ($page =='index0.php' ? 'active' : '')."><a class='nav-link text-white' href='index0.php'>Accueil</a></li>";
             echo        "<li class='nav-item'". ($page =='commandes.php' ? 'active' : '')."><a class='nav-link text-white' href='commandes.php'>Commandes en cours</a></li>";
-            echo        "<li class='nav-item'". ($page =='annuaires.php' ? 'active' : '')."><a class='nav-link text-white' href='annuaires.php'>Annuaires</a></li>";
+            echo        "<li class='nav-item'". ($page =='annuaire.php' ? 'active' : '')."><a class='nav-link text-white' href='annuaire.php'>Annuaire de l'entreprise</a></li>";
             if (isset($_SESSION['user_groups']) && in_array('admin', $_SESSION['user_groups'])) { 
             echo        "<li class='nav-item'". ($page =='administration.php' ? 'active' : '')."><a class='nav-link text-white' href='administration.php'>Administration</a></li>";
             };
