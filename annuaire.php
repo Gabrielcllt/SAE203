@@ -2,11 +2,9 @@
 session_start();
 
 
-include './fonctions.php';
+include './scripts/fonctions.php';
 parametres("Annuaire");
 navigation();
-entete();
-
 
 piedpage();
 ?>
