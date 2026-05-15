@@ -2,11 +2,10 @@
 session_start();
 
 
-include './fonctions.php';
-parametres("Accueil");
+include './scripts/fonctions.php';
+parametres("Commandes");
 navigation();
-entete();
+// Mettre toutes les commandes avec détail ici
 
-// Mettre toutes les commandes avec le détail
 piedpage();
 ?>
