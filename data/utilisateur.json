@@ -111,17 +111,6 @@
   },
   {
     "id": 11,
-    "login": "afaure",
-    "password": "bonjour",
-    "nom": "FAURE",
-    "prenom": "Apolline",
-    "fonction": "Technicien Maintenance",
-    "photo": "apolline.jpg",
-    "bio": "Spécialiste de la récupération de données sur disques durs défectueux.",
-    "groupes": ["salariés", "perso"]
-  },
-  {
-    "id": 12,
     "login": "alemaitre",
     "password": "bonjour",
     "nom": "LEMAÎTRE",
@@ -132,7 +121,7 @@
     "groupes": ["salariés", "perso"]
   },
   {
-    "id": 13,
+    "id": 12,
     "login": "admin",
     "password": "bonjour",
     "nom": "admin",
