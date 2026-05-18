@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     if (!empty($pseudo) && !empty($mdp)) {
         
         // Au lieu de SQL, on lit le fichier JSON
-        $usersData = file_get_contents('data/utilisateur.json');
+        $usersData = file_get_contents('./data/utilisateur.json');
         $users = json_decode($usersData, true);
         $userFound = false;
         
