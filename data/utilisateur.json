@@ -2,7 +2,7 @@
   {
     "id": 1,
     "login": "nbertel",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "BERTEL",
     "prenom": "Nolan",
     "fonction": "Responsable Atelier & Infrastructure",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "login": "aferrard",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "FERRARD",
     "prenom": "Alexi",
     "fonction": "Administrateur Système & Sécurité",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "login": "ebitauld",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "BITAULD",
     "prenom": "Elouann",
     "fonction": "Chef de Projet & Intégrateur",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "login": "gcollet",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "COLLET",
     "prenom": "Gabriel",
     "fonction": "Développeur Back-End",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "login": "amerot",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "MEROT",
     "prenom": "Alban",
     "fonction": "Développeur & Gestionnaire Données",
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "login": "mcoupart",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "COUPART",
     "prenom": "Michel",
     "fonction": "Technicien Maintenance",
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "login": "ochatigny",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "CHATIGNY",
     "prenom": "Ogier",
     "fonction": "Technicien Maintenance",
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "login": "cmathieu",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "MATHIEU",
     "prenom": "Coralie",
     "fonction": "Vendeuse Conseil",
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "login": "alaurent",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "LAURENT",
     "prenom": "Alexandre",
     "fonction": "Technicien Maintenance",
@@ -101,7 +101,7 @@
   {
     "id": 10,
     "login": "mauberjenois",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "AUBERJENOIS",
     "prenom": "Madelene",
     "fonction": "Responsable Logistique",
@@ -112,7 +112,7 @@
   {
     "id": 11,
     "login": "afaure",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "FAURE",
     "prenom": "Apolline",
     "fonction": "Technicien Maintenance",
@@ -123,12 +123,23 @@
   {
     "id": 12,
     "login": "alemaitre",
-    "password": "$2y$10$f.B3bH2.R39kQWc5u/E02.e66vGZ7b.mG/O1D/zOqLhE/B7iT.E1i",
+    "password": "bonjour",
     "nom": "LEMAÎTRE",
     "prenom": "Arnaud",
     "fonction": "Technicien Maintenance",
     "photo": "arnaud.jpg",
     "bio": "Le roi du reconditionnement d'écrans et de dalles LCD.",
     "groupes": ["salariés", "perso"]
+  },
+  {
+    "id": 13,
+    "login": "admin",
+    "password": "bonjour",
+    "nom": "admin",
+    "prenom": "admin",
+    "fonction": "admin",
+    "photo": "admin.jpg",
+    "bio": "...",
+    "groupes": ["admin","salariés", "perso"]
   }
 ]
