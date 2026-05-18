@@ -1,4 +1,15 @@
 [
+   {
+    "id": 1,
+    "login": "admin",
+    "password": "bonjour",
+    "nom": "admin",
+    "prenom": " ",
+    "fonction": "admin",
+    "photo": "admin.jpg",
+    "bio": "LE dieu vivant. Il gère tout avec son JAGER",
+    "groupes": ["admin","salariés", "perso"]
+  },
   {
     "id": 2,
     "login": "nbertel",
@@ -119,16 +130,5 @@
     "photo": "arnaud.jpg",
     "bio": "Le roi du reconditionnement d'écrans et de dalles LCD.",
     "groupes": ["salariés", "perso"]
-  },
-  {
-    "id": 1,
-    "login": "admin",
-    "password": "bonjour",
-    "nom": "admin",
-    "prenom": " ",
-    "fonction": "admin",
-    "photo": "admin.jpg",
-    "bio": "LE dieu vivant. Il gère tout avec son JAGER",
-    "groupes": ["admin","salariés", "perso"]
   }
 ]
