@@ -12,7 +12,7 @@ function parametres($titre="Titre"){
 }
 
 function piedpage(){
-    echo "<footer class='text-center py-4 fixed-bottom bg-white border-top' style='border-color: var(--border-color) !important;'>
+    echo "<footer class='text-center py-4 mt-auto bg-white border-top' style='border-color: var(--border-color) !important;'>
             <small style='color: var(--footer-text); font-weight: 500;'>
                 © " . date('Y') . " BreizhHardware - IUT Saint-Malo R&T
             </small>
