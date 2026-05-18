@@ -6,7 +6,7 @@
     "nom": "BERTEL",
     "prenom": "Nolan",
     "fonction": "Responsable Atelier & Infrastructure",
-    "photo": "nolan.jpg",
+    "photo": "Nolan.jpg",
     "bio": "Expert en hardware breton, Nolan redonne vie aux PC les plus fatigués.",
     "groupes": ["salariés", "perso"]
   },
@@ -17,7 +17,7 @@
     "nom": "FERRARD",
     "prenom": "Alexi",
     "fonction": "Administrateur Système & Sécurité",
-    "photo": "alexi.jpg",
+    "photo": "Alexi.jpg",
     "bio": "Le gardien des données. Si l'intranet est un coffre-fort, Alexi a la clé.",
     "groupes": ["admin", "salariés", "perso"]
   },
@@ -28,7 +28,7 @@
     "nom": "BITAULD",
     "prenom": "Elouann",
     "fonction": "Chef de Projet & Intégrateur",
-    "photo": "elouann.jpg",
+    "photo": "Elouann.jpg",
     "bio": "Chef d'orchestre de Breizh Hardware, il transforme le code en art visuel.",
     "groupes": ["admin", "direction", "perso"]
   },
@@ -39,7 +39,7 @@
     "nom": "COLLET",
     "prenom": "Gabriel",
     "fonction": "Développeur Back-End",
-    "photo": "gabriel.jpg",
+    "photo": "Gabriel.jpg",
     "bio": "L'homme de l'ombre qui fait parler le PHP. Rien ne lui résiste.",
     "groupes": ["managers", "salariés", "perso"]
   },
@@ -50,7 +50,7 @@
     "nom": "MEROT",
     "prenom": "Alban",
     "fonction": "Développeur & Gestionnaire Données",
-    "photo": "alban.jpg",
+    "photo": "Alban.jpg",
     "bio": "Maître des fichiers JSON. Il range les données plus vite que son ombre.",
     "groupes": ["managers", "salariés", "perso"]
   },
