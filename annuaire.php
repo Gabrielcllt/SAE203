@@ -8,10 +8,8 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 
-// 2. Inclusion de ton fichier de fonctions global
 include './scripts/fonctions.php';
 
-// 3. Lecture brute des données JSON de l'annuaire
 $fichierJson = './data/utilisateur.json';
 $users = [];
 
@@ -20,7 +18,6 @@ if (file_exists($fichierJson)) {
     $users = json_decode($usersData, true);
 }
 
-// 4. Affichage des en-têtes de la page (Barre de navigation)
 parametres("Annuaire");
 navigation();
 ?>
@@ -38,12 +35,8 @@ navigation();
                 <div class="col">
                     <div class="card h-100 shadow-sm card-member">
                         <?php 
-                            // Détermination et vérification de la photo
                             $photoFile = !empty($membre['photo']) ? $membre['photo'] : 'admin.jpg';
                             $cheminPhoto = "./images/" . $photoFile;
-                            if (!file_exists($cheminPhoto)) {
-                                $cheminPhoto = "./images/admin.jpg"; // Image de secours si le fichier n'existe pas
-                            }
                         ?>
                         <img src="<?= htmlspecialchars($cheminPhoto) ?>" class="avatar-annuaire" alt="Photo de <?= htmlspecialchars($membre['prenom']) ?>">
                         
@@ -72,6 +65,5 @@ navigation();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php
-// 6. Affichage du pied de page
 piedpage();
 ?>
