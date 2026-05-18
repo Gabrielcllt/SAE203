@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             <form method="POST" action="">
                 <div class="mb-3">
                     <label for="pseudo" class="form-label">Pseudo</label>
-                    <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+                    <input type="text" class="form-control" id="user" name="pseudo" required>
                 </div>
                 
                 <div class="mb-3">

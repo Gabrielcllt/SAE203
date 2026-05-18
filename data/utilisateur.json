@@ -141,5 +141,13 @@
     "photo": "admin.jpg",
     "bio": "...",
     "groupes": ["admin","salariés", "perso"]
+  },
+  {
+    "id": 1,
+    "pseudo": "admin",
+    "password": "bonjour",
+    "role": "admin",
+    "groupes": ["admin", "perso"]
   }
+
 ]
