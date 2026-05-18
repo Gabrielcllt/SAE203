@@ -96,7 +96,7 @@ function navigation(){
     // Le bouton de déconnexion à droite de la liste
     echo "      <li class='nav-item ms-lg-3 mt-2 mt-lg-0'>
                     <form action='' method='POST' class='m-0 d-inline'>
-                        <button type='submit' name='action_deconnexion' class='btn btn-logout shadow-sm'>Se déconnecter</button>
+                        <button type='submit' name='action_deconnexion' class='btn btn-deconnexion shadow-sm'>Se déconnecter</button>
                     </form>
                 </li>
             </ul>
