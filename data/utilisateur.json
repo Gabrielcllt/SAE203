@@ -134,20 +134,12 @@
   {
     "id": 13,
     "login": "admin",
-    "password": "bonjour",
+    "password": "$2y$10$w4X2RjM3b89Yv8z9M7OueU6hGfL7vB2K3mX4b5C6d7e8f9g0h1i2",
     "nom": "admin",
     "prenom": "admin",
     "fonction": "admin",
     "photo": "admin.jpg",
     "bio": "...",
     "groupes": ["admin","salariés", "perso"]
-  },
-  {
-    "id": 1,
-    "pseudo": "admin",
-    "password": "bonjour",
-    "role": "admin",
-    "groupes": ["admin", "perso"]
   }
-
 ]
