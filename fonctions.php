@@ -8,15 +8,7 @@
             <title>$titre</title>
             <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
             </head>";
-        };
-        function entete(){
-            echo "<header class='mt-4 p-5 rounded text-center'>";
-            echo "<img src='./images/logo_sae203_final.png'/> ";
-            echo "<form action='deconnecter()' method='POST'> <button type='submit'>Se déconnecter</button> </form>"
-            if (isset($_POST['action_deconnexion'])) {// si l'on appuie sur le bouton on lance la fonction pour se deconnecter
-                deconnecter();
-            };
-            echo "</header>";
+
         };
         function piedpage(){
             echo "<footer class=' text-center py-5 fixed-bottom'>
@@ -56,6 +48,13 @@
         // redirection
         header("Location: index.php");
         exit();  
+        };
+        function entete() {
+            echo "
+            <div class='container mt-5 pt-5'>
+                <h2 class='text-center'>Bienvenue sur l'Intranet</h2>
+                <hr>
+            </div>";
         };
 ?>
 
