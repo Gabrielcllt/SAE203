@@ -80,7 +80,7 @@ function navigation(){
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'commandes.php' ? 'active' : '') . "' href='commandes.php'>Commandes en cours</a></li>";
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire.php' ? 'active' : '') . "' href='annuaire.php'>Annuaire</a></li>";
     
-    if (isset($_SESSION['user_groups']) && in_array('admin', $_SESSION['user_groups'])) { 
+    if (isset($_SESSION['groupes']) && in_array('admin', $_SESSION['groupes'])) { 
         echo    "<li class='nav-item'><a class='nav-link " . ($page == 'administration.php' ? 'active' : '') . "' href='administration.php'>Administration</a></li>";
     }
     
