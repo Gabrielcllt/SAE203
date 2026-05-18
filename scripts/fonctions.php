@@ -19,11 +19,11 @@ function piedpage(){
           </footer>";
 }
 function navigation(){
-    // deconnexion
+    // 1. Déconnexion
     if (isset($_POST['action_deconnexion'])) {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
-            }
+        }
         $_SESSION = array(); // On vide les variables
         
         session_destroy(); // On détruit la session
@@ -36,6 +36,31 @@ function navigation(){
         }
         exit(); 
     }
+
+    // 2. Récupération dynamique de la photo de l'utilisateur connecté
+    $photo_utilisateur = 'admin.jpg'; // Photo par défaut si problème
+    $nom_utilisateur = isset($_SESSION['login']) ? $_SESSION['login'] : 'Invité';
+
+    if (isset($_SESSION['login'])) {
+        $fichierJson = './data/utilisateur.json';
+        if (file_exists($fichierJson)) {
+            $usersData = file_get_contents($fichierJson);
+            $users = json_decode($usersData, true);
+            if (is_array($users)) {
+                foreach ($users as $user) {
+                    if ($user['login'] === $_SESSION['login'] && !empty($user['photo'])) {
+                        $photo_utilisateur = $user['photo'];
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Chemin complet vers l'image dans ton dossier
+    $chemin_photo = "./images/" . $photo_utilisateur;
+
+    // 3. Génération de la Navbar
     $page = basename($_SERVER['PHP_SELF']);
 
     echo "<nav class='navbar navbar-expand-lg fixed-top navbar-custom'>
@@ -59,8 +84,17 @@ function navigation(){
         echo    "<li class='nav-item'><a class='nav-link " . ($page == 'administration.php' ? 'active' : '') . "' href='administration.php'>Administration</a></li>";
     }
     
+    // AJOUT : Affichage de la photo de profil ronde juste à gauche du bouton déconnexion
+    echo "      <li class='nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center' style='user-select: none;'>
+                    <img src='" . htmlspecialchars($chemin_photo) . "' 
+                         alt='Profil' 
+                         class='rounded-circle border border-2 border-white shadow-sm' 
+                         style='width: 40px; height: 40px; object-fit: cover;' 
+                         title='Connecté en tant que : " . htmlspecialchars($nom_utilisateur) . "'>
+                </li>";
+
     // Le bouton de déconnexion à droite de la liste
-    echo "      <li class='nav-item ms-lg-4 mt-2 mt-lg-0'>
+    echo "      <li class='nav-item ms-lg-3 mt-2 mt-lg-0'>
                     <form action='' method='POST' class='m-0 d-inline'>
                         <button type='submit' name='action_deconnexion' class='btn btn-logout shadow-sm'>Se déconnecter</button>
                     </form>
