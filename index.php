@@ -12,27 +12,27 @@ $erreur = "";
 
 // 3. Traitement du formulaire lors de la soumission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
-    $pseudo = trim($_POST['pseudo']);
-    $mdp = $_POST['mdp'];
+    $pseudo = trim($_POST['login']);
+    $mdp = $_POST['password'];
 
     // On vérifie que les champs ne sont pas vides
     if (!empty($pseudo) && !empty($mdp)) {
         
         // Au lieu de SQL, on lit le fichier JSON
-        $usersData = file_get_contents('data/utilisateur.json');
+        $usersData = file_get_contents('SAE203/data/utilisateur.json');
         $users = json_decode($usersData, true);
         $userFound = false;
         
         // On cherche le pseudo dans le tableau JSON
         foreach ($users as $user) {
-            if ($user['pseudo'] === $pseudo) {
+            if ($user['login'] === $pseudo) {
                 // Utilisation de password_verify() pour comparer le mot de passe tapé avec celui crypté (comme dans la vidéo)
                 if (password_verify($mdp, $user['password'])) {
                     $userFound = true;
                     
                     // Initialisation des variables de session
                     $_SESSION['id'] = $user['id'];
-                    $_SESSION['pseudo'] = $user['pseudo'];
+                    $_SESSION['login'] = $user['login'];
                     $_SESSION['role'] = $user['role'];
                     $_SESSION['groupes'] = $user['groupes'];
                     
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
         
         // Message d'erreur vague par sécurité (conseil de la vidéo)
         if (!$userFound) {
-            $erreur = "La combinaison pseudo / mot de passe est incorrecte.";
+            $erreur = "La combinaison login / mot de passe est incorrecte.";
         }
     } else {
         $erreur = "Veuillez remplir tous les champs.";
