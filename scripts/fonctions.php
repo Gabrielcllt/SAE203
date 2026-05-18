@@ -84,13 +84,13 @@ function navigation(){
         echo    "<li class='nav-item'><a class='nav-link " . ($page == 'administration.php' ? 'active' : '') . "' href='administration.php'>Administration</a></li>";
     }
     
-    // AJOUT : Affichage de la photo de profil ronde juste à gauche du bouton déconnexion
+    // MODIFICATION : Image agrandie à 45px, contour blanc supprimé, et ajout du nom à côté
     echo "      <li class='nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center' style='user-select: none;'>
                     <img src='" . htmlspecialchars($chemin_photo) . "' 
                          alt='Profil' 
-                         class='rounded-circle border border-2 border-white shadow-sm' 
-                         style='width: 40px; height: 40px; object-fit: cover;' 
-                         title='Connecté en tant que : " . htmlspecialchars($nom_utilisateur) . "'>
+                         class='rounded-circle shadow-sm' 
+                         style='width: 45px; height: 45px; object-fit: cover;'>
+                    <span class='text-white ms-2 fw-medium'>" . htmlspecialchars($nom_utilisateur) . "</span>
                 </li>";
 
     // Le bouton de déconnexion à droite de la liste
