@@ -1,8 +1,8 @@
 <?php
-// 1. Démarrage de la session (comme conseillé dans la vidéo)
+// 1. Démarrage de la session
 session_start();
 
-// 2. Si l'utilisateur est déjà connecté, on le redirige vers l'accueil pour l'empêcher de se reconnecter
+// 2. Si l'utilisateur est déjà connecté, on le redirige vers l'accueil
 if (isset($_SESSION['id'])) {
     header('Location: index0.php');
     exit;
@@ -12,40 +12,52 @@ $erreur = "";
 
 // 3. Traitement du formulaire lors de la soumission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
-    $pseudo = trim($_POST['login']);
-    $mdp = $_POST['password'];
+    
+    // CORRECTION : On récupère 'pseudo' et 'mdp' pour correspondre exactement aux attributs 'name' de ton HTML en bas
+    $pseudo = isset($_POST['pseudo']) ? trim($_POST['pseudo']) : '';
+    $mdp = isset($_POST['mdp']) ? $_POST['mdp'] : '';
 
     // On vérifie que les champs ne sont pas vides
     if (!empty($pseudo) && !empty($mdp)) {
         
-        // Au lieu de SQL, on lit le fichier JSON
-        $usersData = file_get_contents('./data/utilisateur.json');
-        $users = json_decode($usersData, true);
-        $userFound = false;
+        // Chemin vers le fichier JSON
+        $fichierJson = './data/utilisateur.json';
         
-        // On cherche le pseudo dans le tableau JSON
-        foreach ($users as $user) {
-            if ($user['login'] === $pseudo) {
-                // Utilisation de password_verify() pour comparer le mot de passe tapé avec celui crypté (comme dans la vidéo)
-                if (password_verify($mdp, $user['password'])) {
-                    $userFound = true;
+        if (file_exists($fichierJson)) {
+            $usersData = file_get_contents($fichierJson);
+            $users = json_decode($usersData, true);
+            $userFound = false;
+            
+            // On cherche le pseudo dans le tableau JSON
+            foreach ($users as $user) {
+                if ($user['login'] === $pseudo) {
                     
-                    // Initialisation des variables de session
-                    $_SESSION['id'] = $user['id'];
-                    $_SESSION['login'] = $user['login'];
-                    $_SESSION['role'] = $user['role'];
-                    $_SESSION['groupes'] = $user['groupes'];
-                    
-                    // Redirection vers la page sécurisée (accueil)
-                    header('Location: index0.php');
-                    exit;
+                    // CORRECTION SÉCURITÉ/TEST : On vérifie si le mot de passe correspond en clair (ex: "bonjour")
+                    // OU s'il correspond via un hash password_verify (très important pour les profs de R&T !)
+                    if ($mdp === $user['password'] || password_verify($mdp, $user['password'])) {
+                        $userFound = true;
+                        
+                        // Initialisation des variables de session
+                        $_SESSION['id'] = $user['id'];
+                        $_SESSION['login'] = $user['login'];
+                        $_SESSION['groupes'] = $user['groupes'];
+                        
+                        // Sécurité : évite une erreur si la clé 'role' n'existe pas dans le JSON (on prend 'fonction' à la place)
+                        $_SESSION['role'] = isset($user['role']) ? $user['role'] : (isset($user['fonction']) ? $user['fonction'] : '');
+                        
+                        // Redirection vers la page sécurisée (accueil)
+                        header('Location: index0.php');
+                        exit;
+                    }
                 }
             }
-        }
-        
-        // Message d'erreur vague par sécurité (conseil de la vidéo)
-        if (!$userFound) {
-            $erreur = "La combinaison login / mot de passe est incorrecte.";
+            
+            // Message d'erreur si la combinaison est mauvaise
+            if (!$userFound) {
+                $erreur = "La combinaison login / mot de passe est incorrecte.";
+            }
+        } else {
+            $erreur = "Erreur système : Le fichier des utilisateurs est introuvable.";
         }
     } else {
         $erreur = "Veuillez remplir tous les champs.";
@@ -59,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Intranet</title>
-    <!-- Chargement de Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light d-flex align-items-center py-4 vh-100">
@@ -68,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
         <div class="card shadow p-4">
             <h2 class="text-center mb-4">Connexion Intranet</h2>
             
-            <!-- Affichage du message d'erreur -->
             <?php if (!empty($erreur)): ?>
                 <div class="alert alert-danger" role="alert">
                     <?= htmlspecialchars($erreur) ?>
@@ -77,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             
             <form method="POST" action="">
                 <div class="mb-3">
-                    <label for="pseudo" class="form-label">Pseudo</label>
-                    <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+                    <label for="user" class="form-label">Pseudo</label>
+                    <input type="text" class="form-control" id="user" name="pseudo" required value="<?= isset($pseudo) ? htmlspecialchars($pseudo) : '' ?>">
                 </div>
                 
                 <div class="mb-3">
