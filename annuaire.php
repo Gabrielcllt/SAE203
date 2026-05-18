@@ -1,5 +1,4 @@
 <?php
-// 1. Démarrage de la session et sécurité
 session_start();
 
 // Si l'utilisateur n'est pas connecté, redirection immédiate vers la page de connexion
