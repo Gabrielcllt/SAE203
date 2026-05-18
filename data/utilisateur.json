@@ -134,7 +134,7 @@
   {
     "id": 13,
     "login": "admin",
-    "password": "$2y$10$w4X2RjM3b89Yv8z9M7OueU6hGfL7vB2K3mX4b5C6d7e8f9g0h1i2.",
+    "password": "bonjour",
     "nom": "admin",
     "prenom": "admin",
     "fonction": "admin",
