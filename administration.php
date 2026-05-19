@@ -10,7 +10,7 @@ if (!isset($_SESSION['id'])) {
 include './scripts/fonctions.php';
 
 // On pointe bien sur le fichier des clients
-$fichierJson = './data/clients.json';
+$fichierJson = './data/client.json';
 $clients = [];
 
 if (file_exists($fichierJson)) {
