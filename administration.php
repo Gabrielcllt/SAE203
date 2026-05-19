@@ -55,12 +55,6 @@ navigation();
                                     <?= htmlspecialchars($client['code_postal']) ?> <?= htmlspecialchars($client['ville']) ?>
                                 </p>
                             </div>
-
-                            <div class="mt-3 pt-2 border-top">
-                                <a href="telecharger_fiche.php?id=<?= $client['id'] ?>" class="btn btn-outline-secondary btn-sm w-100">
-                                    Télécharger la fiche
-                                </a>
-                            </div>
                         </div>
 
                     </div>
