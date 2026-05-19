@@ -78,7 +78,7 @@ function navigation(){
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'index0.php' ? 'active' : '') . "' href='index0.php'>Accueil</a></li>";
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'commandes.php' ? 'active' : '') . "' href='commandes.php'>Commandes en cours</a></li>";
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire.php' ? 'active' : '') . "' href='annuaire.php'>Annuaire</a></li>";
-    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire_client.php' ? 'active' : '') . "' href='annuaire_client.php'>Annuaire</a></li>";
+    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire_client.php' ? 'active' : '') . "' href='annuaire_client.php'>Annuaire client</a></li>";
     
     if (isset($_SESSION['groupes']) && in_array('admin', $_SESSION['groupes'])) { 
         echo    "<li class='nav-item'><a class='nav-link " . ($page == 'administration.php' ? 'active' : '') . "' href='administration.php'>Administration</a></li>";
