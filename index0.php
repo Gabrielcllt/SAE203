@@ -9,7 +9,11 @@ if (!isset($_SESSION['id'])) {
 include './scripts/fonctions.php';
 parametres("Accueil");
 navigation();
-// Mettre nombre de commandes ici
+// nombre de commandes
+$Json = file_get_contents('./data/commandes.json');
+$commande = json_decode($Json, true);
+$commande = count($commande);
+echo 'Voici le nombre de commande : '.$commande;
 
 piedpage();
 ?>
