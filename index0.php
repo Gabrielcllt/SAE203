@@ -42,7 +42,7 @@ navigation();
                     <h4 class="fw-bold text-dark">L'Équipe</h4>
                     <p class="text-muted">Annuaire interne</p>
                     <h2 class="text-primary fw-bold mb-4"><?= $nb_employes ?> <span class="fs-6 text-muted fw-normal">membres</span></h2>
-                    <a href="employes.php" class="btn btn-outline-primary w-100">Gérer le personnel</a>
+                    <a href="annuaire.php" class="btn btn-outline-primary w-100">Gérer le personnel</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ navigation();
                     <h4 class="fw-bold text-dark">Nos Clients</h4>
                     <p class="text-muted">Base de données</p>
                     <h2 class="text-success fw-bold mb-4"><?= $nb_clients ?> <span class="fs-6 text-muted fw-normal">clients</span></h2>
-                    <a href="clients.php" class="btn btn-outline-success w-100">Consulter les fiches</a>
+                    <a href="annuaire_client.php" class="btn btn-outline-success w-100">Consulter les fiches</a>
                 </div>
             </div>
         </div>
