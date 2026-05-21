@@ -1,0 +1,176 @@
+[
+    {
+        "id": 1,
+        "login": "admin",
+        "password": "bonjour",
+        "nom": "admin",
+        "prenom": " ",
+        "fonction": "admin",
+        "photo": "admin.jpg",
+        "bio": "LE dieu vivant. Il gère tout avec son JAGER",
+        "groupes": [
+            "admin",
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 2,
+        "login": "nbertel",
+        "password": "bonjour",
+        "nom": "BERTEL",
+        "prenom": "Nolan",
+        "fonction": "Responsable Atelier & Infrastructure",
+        "photo": "Nolan.jpg",
+        "bio": "Expert en hardware breton, Nolan redonne vie aux PC les plus fatigués.",
+        "groupes": [
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 3,
+        "login": "aferrard",
+        "password": "bonjour",
+        "nom": "FERRARD",
+        "prenom": "Alexi",
+        "fonction": "Administrateur Système & Sécurité",
+        "photo": "Alexi.jpg",
+        "bio": "Le gardien des données. Si l'intranet est un coffre-fort, Alexi a la clé.",
+        "groupes": [
+            "admin",
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 4,
+        "login": "ebitauld",
+        "password": "bonjour",
+        "nom": "BITAULD",
+        "prenom": "Elouann",
+        "fonction": "Chef de Projet & Intégrateur",
+        "photo": "Elouann.jpg",
+        "bio": "Chef d'orchestre de Breizh Hardware, il transforme le code en art visuel.",
+        "groupes": [
+            "admin",
+            "direction",
+            "perso"
+        ]
+    },
+    {
+        "id": 5,
+        "login": "gcollet",
+        "password": "bonjour",
+        "nom": "COLLET",
+        "prenom": "Gabriel",
+        "fonction": "Développeur Back-End",
+        "photo": "Gabriel.jpg",
+        "bio": "L'homme de l'ombre qui fait parler le PHP. Rien ne lui résiste.",
+        "groupes": [
+            "managers",
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 6,
+        "login": "amerot",
+        "password": "bonjour",
+        "nom": "MEROT",
+        "prenom": "Alban",
+        "fonction": "Développeur & Gestionnaire Données",
+        "photo": "Alban.jpg",
+        "bio": "Maître des fichiers JSON. Il range les données plus vite que son ombre.",
+        "groupes": [
+            "managers",
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 7,
+        "login": "mcoupart",
+        "password": "bonjour",
+        "nom": "COUPART",
+        "prenom": "Michel",
+        "fonction": "Technicien Maintenance",
+        "photo": "michel.jpg",
+        "bio": "Spécialiste du dépoussiérage et du changement de pâte thermique.",
+        "groupes": [
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 8,
+        "login": "ochatigny",
+        "password": "bonjour",
+        "nom": "CHATIGNY",
+        "prenom": "Ogier",
+        "fonction": "Technicien Maintenance",
+        "photo": "ogier.jpg",
+        "bio": "Expert en micro-soudure sur cartes mères de PC portables.",
+        "groupes": [
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 9,
+        "login": "cmathieu",
+        "password": "bonjour",
+        "nom": "MATHIEU",
+        "prenom": "Coralie",
+        "fonction": "Vendeuse Conseil",
+        "photo": "coralie.jpg",
+        "bio": "À l'écoute des clients pour trouver le PC reconditionné idéal.",
+        "groupes": [
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 10,
+        "login": "alaurent",
+        "password": "bonjour",
+        "nom": "LAURENT",
+        "prenom": "Alexandre",
+        "fonction": "Technicien Maintenance",
+        "photo": "alexandre.jpg",
+        "bio": "Passionné par l'optimisation logicielle et le nettoyage système.",
+        "groupes": [
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 11,
+        "login": "mauberjenois",
+        "password": "bonjour",
+        "nom": "AUBERJENOIS",
+        "prenom": "Madelene",
+        "fonction": "Responsable Logistique",
+        "photo": "madelene.jpg",
+        "bio": "Gère les flux d'entrées et sorties des stocks de matériel.",
+        "groupes": [
+            "managers",
+            "salariés",
+            "perso"
+        ]
+    },
+    {
+        "id": 12,
+        "login": "alemaitre",
+        "password": "bonjour",
+        "nom": "LEMAÎTRE",
+        "prenom": "Arnaud",
+        "fonction": "Technicien Maintenance",
+        "photo": "arnaud.jpg",
+        "bio": "Le roi du reconditionnement d'écrans et de dalles LCD.",
+        "groupes": [
+            "salariés",
+            "perso"
+        ]
+    }
+]
