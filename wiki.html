@@ -1,20 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Infos</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="./css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        
+<head>
+    <meta charset="UTF-8">
+    <title>Wiki - Breizh Hardware</title>
+</head>
+<body bgcolor="#fcfcfc" text="#1a1a1a">
 
+    <h1 align="center">Wiki du Projet : Breizh Hardware</h1>
+    <p align="center">Projet SAÉ 203 : Développement de solutions informatiques pour l'entreprise</p>
+    <hr width="80%">
+    <br>
+
+    <fieldset>
+        <legend><h2>1. Architecture du projet</h2></legend>
+        <p>Notre infrastructure repose sur un serveur web Apache hébergeant deux plateformes distinctes, pensées pour répondre à des besoins techniques ou autres :</p>
+        <ul>
+            <li><strong>Le Site Vitrine (WordPress) :</strong> C'est la vitrine publique de Breizh Hardware. Ce système de managment a été configuré avec un thème sombre pour refléter notre identité technologique. Il présente notre savoir-faire "pur beurre, pur processeur", l'histoire de notre fondation en 2025, ainsi que nos partenaires.</li>
+            <br>
+            <li><strong>L'Intranet (Développement PHP/Bootstrap) :</strong> Un portail privé développé sans base de données SQL. L'architecture logicielle s'appuie exclusivement sur la manipulation de fichiers JSON pour le stockage des données (utilisateurs, clients, commandes).</li>
+        </ul>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend><h2>2. Description et utilisation des fonctionnalités</h2></legend>
         
-        <footer class=" text-center py-5 fixed-bottom">
-            <small class="text-muted">© 2026 BreizhHardware - IUT Saint-Malo R&T</small>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><!-- Appel de Bootstrap JS-->
-        <script src="./js/script.js"></script>
-    </body>
+        <h3>🌐 Fonctionnalités de la Vitrine (Publique)</h3>
+        <ul>
+            <li><strong>Présentation :</strong> Pages informatives détaillant nos valeurs, notamment le "Reconditionnement de matériels informatiques".</li>
+            <li><strong>Module Partenaires :</strong> Affichage de nos collaborateurs externes.</li>
+        </ul>
+
+        <h3>🔒 Fonctionnalités de l'Intranet (Privé)</h3>
+        <ul>
+            <li><strong>Authentification sécurisée :</strong> Portail de connexion avec gestion des sessions PHP et hachage des mots de passe.</li>
+            <li><strong>Tableau de bord :</strong> Page d'accueil  qui montre les données clés de l'entreprise (nombre de membres, nombre de clients).</li>
+            <li><strong>Annuaire de l'entreprise :</strong> Liste interactive des membres de l'équipe avec photo de profil, fonction, et biographie. Intègre une barre de recherche en temps réel.</li>
+            <li><strong>Annuaire Client :</strong> Base de données recensant nos clients avec des indicateurs visuels (ID, statuts Particulier/Entreprise).</li>
+            <li><strong>Espace Administration :</strong> Module réservé aux administrateurs permettant la gestion complète du personnel (ajout de nouveaux collaborateurs via formulaire complet et suppression de fiches existantes).</li>
+        </ul>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend><h2>3. Liste des identifiants pour tester le site</h2></legend>
+        <p>Pour évaluer les différentes matrices de droits sur l'intranet, veuillez utiliser les identifiants de test suivants :</p>
+        
+        <table border="1" cellpadding="12" cellspacing="0" width="100%">
+            <tr bgcolor="#e6e6fa">
+                <th>Profil d'accès</th>
+                <th>Identifiant (Login)</th>
+                <th>Mot de passe</th>
+                <th>Droits et autorisations</th>
+            </tr>
+            <tr align="center">
+                <td bgcolor="#f8d7da"><strong>Administrateur</strong></td>
+                <td><code>admin</code></td>
+                <td><code>bonjour</code></td>
+                <td align="left">Accès total : Annuaires + Onglet "Administration" (Gestion complète du personnel).</td>
+            </tr>
+            <tr align="center">
+                <td bgcolor="#d1ecf1"><strong>Salarié (Technicien)</strong></td>
+                <td><code>alemaitre</code></td>
+                <td><code>bonjour</code></td>
+                <td align="left">Accès standard : Consultation des annuaires et des commandes en cours.</td>
+            </tr>
+            <tr align="center">
+                <td bgcolor="#d1ecf1"><strong>Salarié (Technicien)</strong></td>
+                <td><code>afaure</code></td>
+                <td><code>bonjour</code></td>
+                <td align="left">Accès standard : Consultation des annuaires et des commandes en cours.</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <br>
+    <hr width="80%">
+    <p align="center"><small><em>Fichier de documentation technique réalisé par l'équipe Breizh Hardware - IUT R&T Saint-Malo.</em></small></p>
+
+</body>
 </html>
