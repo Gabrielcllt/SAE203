@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// 1. SÉCURITÉ
+// SÉCURITÉ
 if (!isset($_SESSION['groupes']) || !in_array('admin', $_SESSION['groupes'])) {
     header('Location: index0.php');
     exit;
