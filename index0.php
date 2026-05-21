@@ -22,6 +22,11 @@ if (file_exists('./data/client.json')) {
     $nb_clients = is_array($clientsData) ? count($clientsData) : 0;
 }
 
+$nb_commandes = 0;
+if (file_exists('./data/commandes.json')) {
+    $commandesData = json_decode(file_get_contents('./data/commandes.json'), true);
+    $nb_commandes = is_array($commandesData) ? count($commandesData) : 0;
+}
 
 parametres("Accueil Intranet");
 navigation();
@@ -43,6 +48,17 @@ navigation();
                     <p class="text-muted">Annuaire interne</p>
                     <h2 class="text-primary fw-bold mb-4"><?= $nb_employes ?> <span class="fs-6 text-muted fw-normal">membres</span></h2>
                     <a href="annuaire.php" class="btn btn-outline-primary w-100">Gérer le personnel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-white">
+                <div class="card-body text-center p-4">
+                    <h4 class="fw-bold text-dark">Les commandes actuels</h4>
+                    <p class="text-muted">Base de données</p>
+                    <h2 class="text-primary fw-bold mb-4"><?= $nb_commandes ?> <span class="fs-6 text-muted fw-normal">Commandes</span></h2>
+                    <a href="annuaire.php" class="btn btn-outline-primary w-100">Voir les commandes en court!</a>
                 </div>
             </div>
         </div>
