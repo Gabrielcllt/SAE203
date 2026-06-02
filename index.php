@@ -1,3 +1,10 @@
+C'est un détail qui change tout ! Le contraste sera bien meilleur sur ce fond sombre.
+
+Pour forcer le texte en blanc, j'ai simplement ajouté la classe Bootstrap text-white sur le titre "Portail Intranet" et j'ai remplacé la classe text-muted (qui mettait le texte en gris) par text-white sur le bas de page.
+
+Voici le code complet de ta page de connexion avec ces modifications :
+
+PHP
 <?php
 // 1. Démarrage de la session
 session_start();
@@ -9,7 +16,6 @@ if (isset($_SESSION['id'])) {
 }
 
 $erreur = "";
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     
@@ -128,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
         </div>
 
         <div class="card login-card p-4">
-            <h3 class="text-center mb-4 fw-bold">Portail Intranet</h3>
+            <h3 class="text-center mb-4 fw-bold text-white">Portail Intranet</h3>
             
             <?php if (!empty($erreur)): ?>
                 <div class="alert alert-danger border-0 bg-danger bg-opacity-25 text-white" role="alert">
@@ -151,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             </form>
         </div>
         
-        <p class="mt-4 mb-3 text-center text-muted small">&copy; 2026 Breizh Hardware - IUT R&T</p>
+        <p class="mt-4 mb-3 text-center text-white small">&copy; 2026 Breizh Hardware - IUT R&T</p>
     </main>
 
 </body>
