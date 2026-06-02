@@ -1,6 +1,27 @@
 <?php
 session_start();
 
+$fichierJsonUsers = './data/utilisateur.json';
+if (file_exists($fichierJsonUsers)) {
+    $usersData = file_get_contents($fichierJsonUsers);
+    $users = json_decode($usersData, true);
+    $modifie = false;
+
+    foreach ($users as &$user) {
+        // Si le mot de passe n'est pas encore haché (ne commence pas par $2y$)
+        if (isset($user['password']) && strpos($user['password'], '$2y$') !== 0) {
+            $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
+            $modifie = true;
+        }
+    }
+
+    // Si on a modifié au moins un mot de passe, on sauvegarde le fichier
+    if ($modifie) {
+        file_put_contents($fichierJsonUsers, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        echo "<script>alert('Succès : Les mots de passe ont été hachés dans utilisateur.json ! Tu peux effacer le bloc de code.');</script>";
+    }
+}
+
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
     exit;
@@ -15,7 +36,7 @@ if (file_exists('./data/utilisateur.json')) {
 }
 
 $nb_clients = 0;
-if (file_exists('./data/clients.json')) {
+if (file_exists('./data/client.json')) {
     $clientsData = json_decode(file_get_contents('./data/client.json'), true);
     $nb_clients = is_array($clientsData) ? count($clientsData) : 0;
 }
