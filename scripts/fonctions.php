@@ -12,14 +12,14 @@ function parametres($titre="Titre"){
 }
 
 function piedpage(){
-    echo "<footer class='text-center py-4 fixed-bottom bg-white border-top' style='border-color: var(--border-color) !important;'>
+    echo "<footer class='text-center py-4 mt-auto bg-white border-top' style='border-color: var(--border-color) !important;'>
             <small style='color: var(--footer-text); font-weight: 500;'>
                 © " . date('Y') . " BreizhHardware - IUT Saint-Malo R&T
             </small>
           </footer>";
 }
 function navigation(){
-    // 1. Déconnexion
+    // Déconnexion
     if (isset($_POST['action_deconnexion'])) {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
@@ -37,7 +37,7 @@ function navigation(){
         exit(); 
     }
 
-    // 2. Récupération dynamique de la photo de l'utilisateur connecté
+    // Recup de la photo de l'utilisateur connecté
     $photo_utilisateur = 'admin.jpg'; // Photo par défaut si problème
     $nom_utilisateur = isset($_SESSION['login']) ? $_SESSION['login'] : 'Invité';
 
@@ -57,10 +57,9 @@ function navigation(){
         }
     }
     
-    // Chemin complet vers l'image dans ton dossier
     $chemin_photo = "./images/" . $photo_utilisateur;
 
-    // 3. Génération de la Navbar
+    // Navbar
     $page = basename($_SERVER['PHP_SELF']);
 
     echo "<nav class='navbar navbar-expand-lg fixed-top navbar-custom'>
@@ -78,13 +77,13 @@ function navigation(){
             
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'index0.php' ? 'active' : '') . "' href='index0.php'>Accueil</a></li>";
     echo        "<li class='nav-item'><a class='nav-link " . ($page == 'commandes.php' ? 'active' : '') . "' href='commandes.php'>Commandes en cours</a></li>";
-    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire.php' ? 'active' : '') . "' href='annuaire.php'>Annuaire</a></li>";
+    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire.php' ? 'active' : '') . "' href='annuaire.php'>Annuaire de l'entreprise</a></li>";
+    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire_client.php' ? 'active' : '') . "' href='annuaire_client.php'>Annuaire client</a></li>";
     
     if (isset($_SESSION['groupes']) && in_array('admin', $_SESSION['groupes'])) { 
         echo    "<li class='nav-item'><a class='nav-link " . ($page == 'administration.php' ? 'active' : '') . "' href='administration.php'>Administration</a></li>";
     }
     
-    // MODIFICATION : Image agrandie à 45px, contour blanc supprimé, et ajout du nom à côté
     echo "      <li class='nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center' style='user-select: none;'>
                     <img src='" . htmlspecialchars($chemin_photo) . "' 
                          alt='Profil' 
@@ -93,7 +92,7 @@ function navigation(){
                     <span class='text-white ms-2 fw-medium'>" . htmlspecialchars($nom_utilisateur) . "</span>
                 </li>";
 
-    // Le bouton de déconnexion à droite de la liste
+    // Le bouton de déconnexion
     echo "      <li class='nav-item ms-lg-3 mt-2 mt-lg-0'>
                     <form action='' method='POST' class='m-0 d-inline'>
                         <button type='submit' name='action_deconnexion' class='btn btn-deconnexion shadow-sm'>Se déconnecter</button>

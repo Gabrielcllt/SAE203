@@ -10,17 +10,17 @@ if (isset($_SESSION['id'])) {
 
 $erreur = "";
 
-// 3. Traitement du formulaire lors de la soumission
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     
-    // CORRECTION : On récupère 'pseudo' et 'mdp' pour correspondre exactement aux attributs 'name' de ton HTML en bas
+    
     $pseudo = isset($_POST['pseudo']) ? trim($_POST['pseudo']) : '';
     $mdp = isset($_POST['mdp']) ? $_POST['mdp'] : '';
 
-    // On vérifie que les champs ne sont pas vides
+    
     if (!empty($pseudo) && !empty($mdp)) {
         
-        // Chemin vers le fichier JSON
+        
         $fichierJson = './data/utilisateur.json';
         
         if (file_exists($fichierJson)) {
@@ -28,31 +28,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             $users = json_decode($usersData, true);
             $userFound = false;
             
-            // On cherche le pseudo dans le tableau JSON
+            
             foreach ($users as $user) {
                 if ($user['login'] === $pseudo) {
                     
-                    // CORRECTION SÉCURITÉ/TEST : On vérifie si le mot de passe correspond en clair (ex: "bonjour")
-                    // OU s'il correspond via un hash password_verify (très important pour les profs de R&T !)
+                    
                     if ($mdp === $user['password'] || password_verify($mdp, $user['password'])) {
                         $userFound = true;
                         
-                        // Initialisation des variables de session
+                        
                         $_SESSION['id'] = $user['id'];
                         $_SESSION['login'] = $user['login'];
                         $_SESSION['groupes'] = $user['groupes'];
                         
-                        // Sécurité : évite une erreur si la clé 'role' n'existe pas dans le JSON (on prend 'fonction' à la place)
+                        
                         $_SESSION['role'] = isset($user['role']) ? $user['role'] : (isset($user['fonction']) ? $user['fonction'] : '');
                         
-                        // Redirection vers la page sécurisée (accueil)
+                        
                         header('Location: index0.php');
                         exit;
                     }
                 }
             }
             
-            // Message d'erreur si la combinaison est mauvaise
+            
             if (!$userFound) {
                 $erreur = "La combinaison login / mot de passe est incorrecte.";
             }
