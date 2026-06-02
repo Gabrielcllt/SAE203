@@ -15,7 +15,7 @@ if (file_exists('./data/utilisateur.json')) {
 }
 
 $nb_clients = 0;
-if (file_exists('./data/clients.json')) {
+if (file_exists('./data/client.json')) {
     $clientsData = json_decode(file_get_contents('./data/client.json'), true);
     $nb_clients = is_array($clientsData) ? count($clientsData) : 0;
 }
