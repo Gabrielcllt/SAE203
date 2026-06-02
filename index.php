@@ -1,10 +1,3 @@
-C'est un détail qui change tout ! Le contraste sera bien meilleur sur ce fond sombre.
-
-Pour forcer le texte en blanc, j'ai simplement ajouté la classe Bootstrap text-white sur le titre "Portail Intranet" et j'ai remplacé la classe text-muted (qui mettait le texte en gris) par text-white sur le bas de page.
-
-Voici le code complet de ta page de connexion avec ces modifications :
-
-PHP
 <?php
 // 1. Démarrage de la session
 session_start();
