@@ -68,7 +68,7 @@
         "photo": "Gabriel.jpg",
         "bio": "L'homme de l'ombre qui fait parler le PHP. Rien ne lui résiste.",
         "groupes": [
-            "managers",
+            "admin",
             "salariés",
             "perso"
         ]
@@ -83,7 +83,7 @@
         "photo": "Alban.jpg",
         "bio": "Maître des fichiers JSON. Il range les données plus vite que son ombre.",
         "groupes": [
-            "managers",
+            "admin",
             "salariés",
             "perso"
         ]
