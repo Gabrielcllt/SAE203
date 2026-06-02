@@ -10,11 +10,11 @@ if (!isset($_SESSION['groupes']) || !in_array('admin', $_SESSION['groupes'])) {
 include './scripts/fonctions.php';
 $fichierJson = './data/utilisateur.json';
 
-// CORRECTION PROTECTION : Si le JSON est malformé, on force un tableau vide pour éviter le crash
+// Si le JSON est malformé, on force un tableau vide pour éviter le crash
 $users = file_exists($fichierJson) ? json_decode(file_get_contents($fichierJson), true) : [];
 if (!is_array($users)) { $users = []; }
 
-// 2. TRAITEMENT : AJOUT
+// AJOUT
 if (isset($_POST['action_ajout'])) {
     $users[] = [
         "id" => time(), 
