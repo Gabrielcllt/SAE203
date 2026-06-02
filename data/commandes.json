@@ -1,14 +1,26 @@
 [
-    {
-        "Nom": "Ferrard",
-        "Prénom": "Alexi",
-        "Date": "2026-05-10T10:25:52",
-        "Numéro du PC" : 2
-    },
-    {
-        "Nom": "Bertel",
-        "Prénom": "Nolan",
-        "Date": "2026-05-10T10:25:52",
-        "Numéro du PC" : 4
-    }
+  {
+    "id": "CMD-2606-001",
+    "date": "01/06/2026 10:15",
+    "client": "Gwenola RIOU",
+    "email": "gwenola.riou@email.fr",
+    "produit": "Gamme Menhir (1080p)",
+    "statut": "Livré"
+  },
+  {
+    "id": "CMD-2606-002",
+    "date": "01/06/2026 14:42",
+    "client": "Ewan LE FUR",
+    "email": "ewan.lefur@email.bzh",
+    "produit": "Gamme Dolmen (1440p)",
+    "statut": "En cours de reconditionnement"
+  },
+  {
+    "id": "CMD-2606-003",
+    "date": "02/06/2026 09:30",
+    "client": "Kilian KERVELLA",
+    "email": "k.kervella@entreprise.bzh",
+    "produit": "Gamme Phare (Haut de gamme)",
+    "statut": "À traiter"
+  }
 ]
