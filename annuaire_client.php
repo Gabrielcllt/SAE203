@@ -8,7 +8,7 @@ if (!isset($_SESSION['id'])) {
 
 include './scripts/fonctions.php';
 
-$fichierJson = './data/clients.json';
+$fichierJson = './data/client.json';
 $clients = [];
 
 if (file_exists($fichierJson)) {
@@ -53,15 +53,7 @@ navigation();
                                     <?= htmlspecialchars($client['code_postal']) ?> <?= htmlspecialchars($client['ville']) ?>
                                 </p>
                             </div>
-
-                            <div class="mt-3 pt-2 border-top">
-                                <!-- Bouton de téléchargement -->
-                                <a href="telecharger_fiche.php?id=<?= $client['id'] ?>" class="btn btn-sm w-100" style="background-color: var(--c1); color: var(--c6); border: 1px solid var(--c3); font-weight: 600;">
-                                    Télécharger la fiche
-                                </a>
-                            </div>
                         </div>
-
                     </div>
                 </div>
             <?php endforeach; ?>
