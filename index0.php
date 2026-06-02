@@ -42,7 +42,7 @@ if (file_exists('./data/client.json')) {
 }
 
 $nb_partenaires = 0;
-if (file_exists('./data/partenaires.json')) {
+if (file_exists('./data/commandes.json')) {
     $commandes = json_decode(file_get_contents('./data/commandes.json'), true);
     $nb_commandes = is_array($commandes) ? count($commandes) : 0;
 }
@@ -55,7 +55,7 @@ navigation();
     
    
     <div class="mb-5 p-4 rounded-3 border shadow-sm" style="background-color: var(--c1); border-color: var(--c2) !important;">
-        <h1 class="fw-bold mb-2" style="color: var(--c10);">Degemer mat, <?= htmlspecialchars($_SESSION['prenom'] ?? 'Collaborateur') ?> ! 👋</h1>
+        <h1 class="fw-bold mb-2" style="color: var(--c10);">Degemer mat, <?= htmlspecialchars($_SESSION['prenom'] ?? 'Collaborateur') ?> !</h1>
         <p class="fs-5 m-0" style="color: var(--c6);">Bienvenue sur l'intranet de <strong>Breizh Hardware</strong>.</p>
     </div>
 
@@ -67,7 +67,7 @@ navigation();
                     <h4 class="fw-bold" style="color: var(--c10);">L'Équipe</h4>
                     <p class="text-muted">Annuaire interne</p>
                     <h2 class="fw-bold mb-4" style="color: var(--c6);"><?= $nb_employes ?> <span class="fs-6 text-muted fw-normal">membres</span></h2>
-                    <a href="employes.php" class="btn w-100" style="background-color: var(--c10); color: white;">Gérer le personnel</a>
+                    <a href="annuaire.php" class="btn w-100" style="background-color: var(--c10); color: white;">Gérer le personnel</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@ navigation();
                     <h4 class="fw-bold" style="color: var(--c10);">Nos Clients</h4>
                     <p class="text-muted">Base de données</p>
                     <h2 class="fw-bold mb-4" style="color: var(--c6);"><?= $nb_clients ?> <span class="fs-6 text-muted fw-normal">clients</span></h2>
-                    <a href="clients.php" class="btn w-100" style="background-color: var(--c6); color: white;">Consulter les fiches</a>
+                    <a href="annuaire_client.php" class="btn w-100" style="background-color: var(--c6); color: white;">Consulter les fiches</a>
                 </div>
             </div>
         </div>
@@ -88,8 +88,8 @@ navigation();
                 <div class="card-body text-center p-4">
                     <h4 class="fw-bold" style="color: var(--c10);">Commandes</h4>
                     <p class="text-muted">Nombre de commandes</p>
-                    <h2 class="fw-bold mb-4" style="color: var(--c6);"><?= $nb_partenaires ?> <span class="fs-6 text-muted fw-normal">actives</span></h2>
-                    <a href="partenaires.php" class="btn w-100" style="background-color: var(--c10); color: white;">Gérer les commandes</a>
+                    <h2 class="fw-bold mb-4" style="color: var(--c6);"><?= $nb_commandes ?> <span class="fs-6 text-muted fw-normal">actives</span></h2>
+                    <a href="commandes.php" class="btn w-100" style="background-color: var(--c10); color: white;">Gérer les commandes</a>
                 </div>
             </div>
         </div>
