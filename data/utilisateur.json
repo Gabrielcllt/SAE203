@@ -24,6 +24,7 @@
         "photo": "Nolan.jpg",
         "bio": "Expert en hardware breton, Nolan redonne vie aux PC les plus fatigués.",
         "groupes": [
+            "admin",
             "salariés",
             "perso"
         ]
