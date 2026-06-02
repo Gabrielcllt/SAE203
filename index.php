@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
                 </div>
                 
                 <div class="mb-3">
-                    <label for="mdp" class="form-label">Mot de passe</label>
+                    <label for="mdp" class="form-label">Mots de passe</label>
                     <input type="password" class="form-control" id="mdp" name="mdp" required>
                 </div>
                 
