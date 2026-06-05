@@ -1,14 +1,11 @@
 <?php
-session_start();
+include './scripts/fonctions.php';
+secure_session_start();
 
-// Si l'utilisateur n'est pas connecté, redirection immédiate vers la page de connexion
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
     exit;
 }
-
-include './scripts/fonctions.php';
-
 
 $fichierJson = './data/client.json';
 $clients = [];
@@ -22,10 +19,10 @@ parametres("Annuaire Clients");
 navigation();
 ?>
 
-<div class="container mb-5" style="margin-top: 100px;">
+<div class="container mb-5">
     
     <div class="mb-5">
-        <h1 class="fw-bold text-dark m-0">Annuaire des Clients</h1>
+        <h1 class="fw-bold m-0" style="color: var(--c10);">Annuaire des Clients</h1>
         <p class="text-muted m-0">Base de données clients de l'entreprise Breizh Hardware</p>
     </div>
 
@@ -33,17 +30,17 @@ navigation();
         <?php if (!empty($clients) && is_array($clients)): ?>
             <?php foreach ($clients as $client): ?>
                 <div class="col">
-                    <div class="card h-100 shadow-sm border-start border-4 <?php echo ($client['type'] === 'Entreprise') ? 'border-primary' : 'border-success'; ?>">
+                    <div class="card h-100 shadow-sm border-start border-4" style="border-color: <?php echo ($client['type'] === 'Entreprise') ? 'var(--c10)' : 'var(--c6)'; ?> !important;">
                         
                         <div class="card-body d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge <?php echo ($client['type'] === 'Entreprise') ? 'bg-primary' : 'bg-success'; ?> fw-normal">
+                                <span class="badge fw-normal" style="background-color: <?php echo ($client['type'] === 'Entreprise') ? 'var(--c10)' : 'var(--c6)'; ?>;">
                                     <?= htmlspecialchars($client['type']) ?>
                                 </span>
                                 <small class="text-muted">ID: #<?= htmlspecialchars($client['id']) ?></small>
                             </div>
 
-                            <h5 class="card-title fw-bold mb-3 text-dark">
+                            <h5 class="card-title fw-bold mb-3" style="color: var(--c10);">
                                 <?= htmlspecialchars($client['nom']) ?> <?= htmlspecialchars($client['prenom'] ?? '') ?>
                             </h5>
                             
@@ -56,7 +53,6 @@ navigation();
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             <?php endforeach; ?>

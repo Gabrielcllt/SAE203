@@ -1,4 +1,18 @@
 <?php
+function secure_session_start() {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_set_cookie_params([
+            'lifetime' => 0,
+            'path' => '/',
+            'domain' => '',
+            'secure' => isset($_SERVER['HTTPS']),
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+        session_start();
+    }
+}
+
 function parametres($titre="Titre"){
     echo "<!DOCTYPE html>
     <html lang='fr'>
@@ -21,9 +35,7 @@ function piedpage(){
 function navigation(){
     // Déconnexion
     if (isset($_POST['action_deconnexion'])) {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+        secure_session_start();
         $_SESSION = array(); // On vide les variables
         
         session_destroy(); // On détruit la session
@@ -75,11 +87,11 @@ function navigation(){
         <div class='collapse navbar-collapse' id='navbarNav'>
             <ul class='navbar-nav ms-auto align-items-center'>";
             
-    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'index0.php' ? 'active' : '') . "' href='index0.php'>Accueil</a></li>";
-    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'commandes.php' ? 'active' : '') . "' href='commandes.php'>Commandes en cours</a></li>";
-    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire.php' ? 'active' : '') . "' href='annuaire.php'>Annuaire de l'entreprise</a></li>";
-    echo        "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire_client.php' ? 'active' : '') . "' href='annuaire_client.php'>Annuaire client</a></li>";
-    
+    echo "<li class='nav-item'><a class='nav-link " . ($page == 'index0.php' ? 'active' : '') . "' href='index0.php'>Accueil</a></li>";
+    echo "<li class='nav-item'><a class='nav-link " . ($page == 'commandes.php' ? 'active' : '') . "' href='commandes.php'>Commandes</a></li>";
+    echo "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire.php' ? 'active' : '') . "' href='annuaire.php'>Annuaire entreprise</a></li>";
+    echo "<li class='nav-item'><a class='nav-link " . ($page == 'annuaire_client.php' ? 'active' : '') . "' href='annuaire_client.php'>Annuaire client</a></li>";
+    echo "<li class='nav-item'><a class='nav-link' href='../wordpress/'>Wordpress</a></li>";
     if (isset($_SESSION['groupes']) && in_array('admin', $_SESSION['groupes'])) { 
         echo    "<li class='nav-item'><a class='nav-link " . ($page == 'administration.php' ? 'active' : '') . "' href='administration.php'>Administration</a></li>";
     }
