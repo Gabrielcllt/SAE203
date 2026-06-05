@@ -1,0 +1,88 @@
+/* Palette Coolors intégrée */
+:root {
+    --c1: #e7d8f7; /* Lavande très clair */
+    --c2: #cfb1ee; /* Lavande moyen */
+    --c3: #b88ae6; /* Lavande foncé */
+    --c6: #7014cc; /* Violet vibrant */
+    --c9: #482e77; /* Violet sombre */
+    --c10: #3a365b; /* Slate sombre (Navbar) */
+}
+
+body {
+    /* Un léger dégradé pour que le fond ne soit pas "blanc hôpital" */
+    background: radial-gradient(circle at top, #ffffff 0%, #f4effa 100%);
+    min-height: 100vh;
+    padding-top: 100px; /* Espace pour la navbar fixe */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--c10);
+}
+
+/* NAVBAR */
+.navbar-custom {
+    background-color: var(--c10) !important;
+    border-bottom: 3px solid var(--c6);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 0.5rem 0;
+}
+
+.nav-logo {
+    height: 55px; /* Taille agrandie du logo */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar-custom .nav-link {
+    color: var(--c1) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover, 
+.navbar-custom .nav-link.active {
+    color: white !important;
+    border-bottom: 2px solid var(--c3);
+}
+
+/* BOUTON DECONNEXION */
+.btn-deconnexion {
+    background-color: var(--c6);
+    color: white;
+    border: 2px solid var(--c6);
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-deconnexion:hover {
+    background-color: transparent;
+    color: var(--c1);
+    box-shadow: 0 0 10px var(--c6);
+}
+
+/* FOOTER */
+.footer-custom {
+    background-color: white;
+    border-top: 1px solid var(--c2);
+    color: var(--c9);
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* Menu Burger sur mobile */
+.navbar-toggler {
+    border-color: var(--c2);
+}
+.navbar-toggler-icon {
+    filter: invert(1); /* Pour que l'icône soit blanche */
+}

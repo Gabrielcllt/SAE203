@@ -7,7 +7,7 @@
 
  3. logo:
 
-  ![Breizh Hardware](/images/logo_sae203_final2.png)
+  ![Breizh Hardware](/images/logo_sae203_final.png)
 
  4. slogan:
     Breizh Hardware : Pur beurre, pur processeur.
