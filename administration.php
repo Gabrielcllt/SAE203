@@ -1,13 +1,13 @@
 <?php
-session_start();
+include './scripts/fonctions.php';
+secure_session_start();
 
-// SÉCURITÉ
+// SÉCURITÉ : Vérification stricte des droits admin
 if (!isset($_SESSION['groupes']) || !in_array('admin', $_SESSION['groupes'])) {
     header('Location: index0.php');
     exit;
 }
 
-include './scripts/fonctions.php';
 $fichierJson = './data/utilisateur.json';
 
 // Si le JSON est malformé, on force un tableau vide pour éviter le crash
@@ -25,7 +25,7 @@ if (isset($_POST['action_ajout'])) {
         "fonction" => trim($_POST['fonction']),
         "photo" => !empty($_POST['photo']) ? trim($_POST['photo']) : 'admin.jpg',
         "bio" => trim($_POST['bio']),
-        "groupes" => isset($_POST['is_admin']) ? ["admin", "salariés", "perso"] : ["salariés", "perso"]
+        "groupes" => ($_POST['groupe_principal'] === 'admin') ? ["admin", "salariés", "perso"] : [$_POST['groupe_principal'], "salariés", "perso"]
     ];
     file_put_contents($fichierJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     header('Location: administration.php');
@@ -43,7 +43,7 @@ if (isset($_POST['action_modification'])) {
             $u['fonction'] = trim($_POST['fonction']);
             $u['photo'] = !empty($_POST['photo']) ? trim($_POST['photo']) : 'admin.jpg';
             $u['bio'] = trim($_POST['bio']);
-            $u['groupes'] = isset($_POST['is_admin']) ? ["admin", "salariés", "perso"] : ["salariés", "perso"];
+            $u['groupes'] = ($_POST['groupe_principal'] === 'admin') ? ["admin", "salariés", "perso"] : [$_POST['groupe_principal'], "salariés", "perso"];
         }
     }
     file_put_contents($fichierJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
@@ -89,10 +89,14 @@ navigation();
             <div class="col-md-3"><input type="password" name="password" placeholder="Mot de passe" class="form-control" value="<?= $uEdit ? htmlspecialchars($uEdit['password']) : '' ?>" required></div>
             <div class="col-md-4"><input type="text" name="fonction" placeholder="Fonction" class="form-control" value="<?= $uEdit ? htmlspecialchars($uEdit['fonction']) : '' ?>" required></div>
             <div class="col-md-4"><input type="text" name="photo" placeholder="Nom photo (Ex: jean.jpg)" class="form-control" value="<?= $uEdit ? htmlspecialchars($uEdit['photo']) : '' ?>"></div>
-            <div class="col-md-4 d-flex align-items-center">
-                <label class="form-check-label text-danger fw-bold">
-                    <input type="checkbox" name="is_admin" value="1" class="form-check-input me-2" <?= ($uEdit && in_array('admin', $uEdit['groupes'])) ? 'checked' : '' ?>> Droits Admin
-                </label>
+            <div class="col-md-4">
+                <label class="form-label">Groupe / Rôle</label>
+                <select name="groupe_principal" class="form-select" required>
+                    <option value="salariés" <?= ($uEdit && in_array('salariés', $uEdit['groupes']) && !in_array('admin', $uEdit['groupes'])) ? 'selected' : '' ?>>Salarié</option>
+                    <option value="managers" <?= ($uEdit && in_array('managers', $uEdit['groupes'])) ? 'selected' : '' ?>>Manager</option>
+                    <option value="direction" <?= ($uEdit && in_array('direction', $uEdit['groupes'])) ? 'selected' : '' ?>>Direction</option>
+                    <option value="admin" <?= ($uEdit && in_array('admin', $uEdit['groupes'])) ? 'selected' : '' ?>>Administrateur</option>
+                </select>
             </div>
             <div class="col-12"><textarea name="bio" placeholder="Biographie" class="form-control" rows="2" required><?= $uEdit ? htmlspecialchars($uEdit['bio']) : '' ?></textarea></div>
             <div class="col-12 text-end">

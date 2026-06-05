@@ -1,12 +1,11 @@
 <?php
-session_start();
+include './scripts/fonctions.php';
+secure_session_start();
 
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
     exit;
 }
-
-include './scripts/fonctions.php';
 
 $fichierJson = './data/client.json';
 $clients = [];

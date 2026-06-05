@@ -1,6 +1,7 @@
 <?php
 // 1. Démarrage de la session
-session_start();
+include './scripts/fonctions.php';
+secure_session_start();
 
 // 2. Si l'utilisateur est déjà connecté, on le redirige vers l'accueil
 if (isset($_SESSION['id'])) {
@@ -27,12 +28,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             foreach ($users as $user) {
                 if ($user['login'] === $pseudo) {
                     
-                    if ($mdp === $user['password'] || password_verify($mdp, $user['password'])) {
+                    // Vérification sécurisée avec password_verify
+                    // Note: On garde la comparaison directe temporairement si vous avez des mots de passe en clair, 
+                    // mais il est fortement recommandé de tous les hacher.
+                    if (password_verify($mdp, $user['password']) || $mdp === $user['password']) {
                         $userFound = true;
+                        
+                        // Régénération de l'ID de session pour éviter la fixation de session
+                        session_regenerate_id(true);
                         
                         $_SESSION['id'] = $user['id'];
                         $_SESSION['login'] = $user['login'];
                         $_SESSION['groupes'] = $user['groupes'];
+                        $_SESSION['prenom'] = $user['prenom'] ?? ''; // Ajout du prénom pour l'accueil
                         
                         $_SESSION['role'] = isset($user['role']) ? $user['role'] : (isset($user['fonction']) ? $user['fonction'] : '');
                         

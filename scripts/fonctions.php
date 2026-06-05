@@ -1,4 +1,18 @@
 <?php
+function secure_session_start() {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_set_cookie_params([
+            'lifetime' => 0,
+            'path' => '/',
+            'domain' => '',
+            'secure' => isset($_SERVER['HTTPS']),
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+        session_start();
+    }
+}
+
 function parametres($titre="Titre"){
     echo "<!DOCTYPE html>
     <html lang='fr'>
@@ -21,9 +35,7 @@ function piedpage(){
 function navigation(){
     // Déconnexion
     if (isset($_POST['action_deconnexion'])) {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+        secure_session_start();
         $_SESSION = array(); // On vide les variables
         
         session_destroy(); // On détruit la session
