@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     
     <link rel="stylesheet" href="./style/style.css">
 </head>
-<body class="d-flex align-items-center py-4 vh-100">
+<body class="login-body d-flex align-items-center py-4 vh-100">
     
     <main class="form-signin w-100 m-auto" style="max-width: 420px;">
         
