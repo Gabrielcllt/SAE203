@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             foreach ($users as $user) {
                 if ($user['login'] === $pseudo) {
                     
+                    // Vérification du mot de passe (compatible clair et haché)
                     if ($mdp === $user['password'] || password_verify($mdp, $user['password'])) {
                         $userFound = true;
                         
@@ -60,77 +61,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Intranet - Breizh Hardware</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <style>
-        body {
-            /* Couleur de fond bleu nuit profond inspirée de votre WordPress */
-            background-color: #081121; 
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .login-card {
-            /* Bleu un peu plus clair pour détacher la carte du fond */
-            background-color: #0f1c35; 
-            border: 1px solid #1e3050;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        .form-control {
-            /* Champs de saisie sombres */
-            background-color: #162442;
-            border: 1px solid #2a3f66;
-            color: #ffffff;
-        }
-        .form-control:focus {
-            background-color: #1c2b4d;
-            color: #ffffff;
-            /* Liseré violet au clic */
-            border-color: #7b2cbf; 
-            box-shadow: 0 0 0 0.25rem rgba(123, 44, 191, 0.25);
-        }
-        .form-label {
-            color: #a0aec0; /* Gris clair pour les labels */
-            font-weight: 500;
-        }
-        .btn-custom {
-            /* Violet vibrant similaire à votre bouton "Ce que nous faisons" */
-            background: linear-gradient(90deg, #6200ea 0%, #8e24aa 100%);
-            border: none;
-            color: white;
-            font-weight: bold;
-            padding: 10px 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn-custom:hover {
-            background: linear-gradient(90deg, #7c4dff 0%, #ab47bc 100%);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(123, 44, 191, 0.4);
-        }
-        .logo-container {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .logo-container img {
-            max-width: 200px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body class="d-flex align-items-center py-4 vh-100">
     
     <main class="form-signin w-100 m-auto" style="max-width: 420px;">
         
         <div class="logo-container">
-            <img src="./images/logo_allongé.png" alt="Logo Breizh Hardware">
+            <img src="./images/logo_allongé.png" alt="Logo Breizh Hardware" class="img-fluid d-block mx-auto mb-4" style="max-width: 200px;">
         </div>
 
-        <div class="card login-card p-4">
-            <h3 class="text-center mb-4 fw-bold text-white">Portail Intranet</h3>
+        <div class="card shadow p-4">
+            <h3 class="text-center mb-4 fw-bold">Portail Intranet</h3>
             
             <?php if (!empty($erreur)): ?>
-                <div class="alert alert-danger border-0 bg-danger bg-opacity-25 text-white" role="alert">
+                <div class="alert alert-danger text-center" role="alert">
                     <?= htmlspecialchars($erreur) ?>
                 </div>
             <?php endif; ?>
@@ -146,11 +94,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
                     <input type="password" class="form-control form-control-lg" id="mdp" name="mdp" required>
                 </div>
                 
-                <button class="btn btn-custom w-100 rounded-pill btn-lg" type="submit" name="connexion">Se connecter</button>
+                <button class="btn btn-primary w-100 rounded-pill btn-lg" type="submit" name="connexion">Se connecter</button>
             </form>
         </div>
         
-        <p class="mt-4 mb-3 text-center text-white small">&copy; 2026 Breizh Hardware - IUT R&T</p>
+        <p class="mt-4 mb-3 text-center text-muted small">&copy; 2026 Breizh Hardware - IUT R&T</p>
     </main>
 
 </body>
