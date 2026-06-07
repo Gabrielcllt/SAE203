@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             foreach ($users as $user) {
                 if ($user['login'] === $pseudo) {
                     
-                    // Vérification du mot de passe (compatible clair et haché)
                     if ($mdp === $user['password'] || password_verify($mdp, $user['password'])) {
                         $userFound = true;
                         
@@ -74,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             <img src="./images/logo_allongé.png" alt="Logo Breizh Hardware" class="img-fluid d-block mx-auto mb-4" style="max-width: 200px;">
         </div>
 
-        <div class="card shadow p-4">
+        <div class="card login-card p-4">
             <h3 class="text-center mb-4 fw-bold">Portail Intranet</h3>
             
             <?php if (!empty($erreur)): ?>
@@ -94,11 +93,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
                     <input type="password" class="form-control form-control-lg" id="mdp" name="mdp" required>
                 </div>
                 
-                <button class="btn btn-primary w-100 rounded-pill btn-lg" type="submit" name="connexion">Se connecter</button>
+                <button class="btn btn-custom w-100 rounded-pill btn-lg" type="submit" name="connexion">Se connecter</button>
             </form>
         </div>
         
-        <p class="mt-4 mb-3 text-center text-muted small">&copy; 2026 Breizh Hardware - IUT R&T</p>
+        <p class="mt-4 mb-3 text-center small">&copy; 2026 Breizh Hardware - IUT R&T</p>
     </main>
 
 </body>
