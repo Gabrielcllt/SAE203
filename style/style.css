@@ -17,11 +17,6 @@ body {
     color: var(--c10);
 }
 
-/* Page de connexion spécifique : on annule le padding de la navbar */
-body.login-body {
-    padding-top: 0 !important;
-}
-
 /* NAVBAR */
 .navbar-custom {
     background-color: var(--c10) !important;
@@ -90,46 +85,4 @@ body.login-body {
 }
 .navbar-toggler-icon {
     filter: invert(1); /* Pour que l'icône soit blanche */
-}
-
-/* ==========================================================================
-   STYLISATION DE LA PAGE DE CONNEXION (LAVANDE THEME)
-   ========================================================================== */
-
-.login-card {
-    background-color: #ffffff !important;
-    border: 2px solid var(--c2) !important; /* Bordure lavande moyen */
-    border-radius: 16px !important;
-    box-shadow: 0 10px 30px rgba(112, 20, 204, 0.1) !important; /* Ombre violette très discrète */
-}
-
-.login-card h3 {
-    color: var(--c9) !important; /* Titre violet sombre */
-}
-
-.login-card .form-label {
-    color: var(--c10) !important; /* Labels en Slate sombre */
-    font-weight: 500;
-}
-
-/* Effet au clic sur les champs de saisie */
-.login-card .form-control:focus {
-    border-color: var(--c3) !important; /* Liseré lavande foncé */
-    box-shadow: 0 0 0 0.25rem rgba(184, 138, 230, 0.25) !important;
-}
-
-/* Bouton Connexion personnalisé */
-.btn-custom {
-    background-color: var(--c6) !important; /* Violet vibrant */
-    color: white !important;
-    font-weight: 600 !important;
-    border: none !important;
-    transition: all 0.3s ease !important;
-}
-
-.btn-custom:hover {
-    background-color: var(--c9) !important; /* Devient violet sombre au survol */
-    color: white !important;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(112, 20, 204, 0.3) !important;
 }
