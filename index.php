@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             foreach ($users as $user) {
                 if ($user['login'] === $pseudo) {
                     
+
                     // Vérification sécurisée avec password_verify
                     // Note: On garde la comparaison directe temporairement si vous avez des mots de passe en clair, 
                     // mais il est fortement recommandé de tous les hacher.
@@ -68,41 +69,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Intranet - Breizh Hardware</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
         body {
-            /* Couleur de fond bleu nuit profond inspirée de votre WordPress */
-            background-color: #081121; 
+            background-color: #081121; /* Bleu nuit WordPress */
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .login-card {
-            /* Bleu un peu plus clair pour détacher la carte du fond */
-            background-color: #0f1c35; 
+            background-color: #0f1c35; /* Carte légèrement plus claire */
             border: 1px solid #1e3050;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
         .form-control {
-            /* Champs de saisie sombres */
-            background-color: #162442;
+            background-color: #162442; /* Champs sombres */
             border: 1px solid #2a3f66;
             color: #ffffff;
         }
         .form-control:focus {
             background-color: #1c2b4d;
             color: #ffffff;
-            /* Liseré violet au clic */
-            border-color: #7b2cbf; 
+            border-color: #7b2cbf; /* Liseré violet au clic */
             box-shadow: 0 0 0 0.25rem rgba(123, 44, 191, 0.25);
         }
         .form-label {
-            color: #a0aec0; /* Gris clair pour les labels */
+            color: #a0aec0;
             font-weight: 500;
         }
         .btn-custom {
-            /* Violet vibrant similaire à votre bouton "Ce que nous faisons" */
+            /* Dégradé violet vibrant assorti au bouton de ta vitrine */
             background: linear-gradient(90deg, #6200ea 0%, #8e24aa 100%);
             border: none;
             color: white;
@@ -138,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             <h3 class="text-center mb-4 fw-bold text-white">Portail Intranet</h3>
             
             <?php if (!empty($erreur)): ?>
-                <div class="alert alert-danger border-0 bg-danger bg-opacity-25 text-white" role="alert">
+                <div class="alert alert-danger border-0 bg-danger bg-opacity-25 text-white text-center" role="alert">
                     <?= htmlspecialchars($erreur) ?>
                 </div>
             <?php endif; ?>
